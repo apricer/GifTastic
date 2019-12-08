@@ -27,7 +27,12 @@
 
     <script type="text/javascript">
         $('button').on('click', function () {
-            console.log("Button Clicked!");
+            var x = $(this).data("search");
+            console.log(x);
+
+            var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+                x + "api_keyBdbjZTGcexQ7b23etA5MfOCUxSevGkYE&limit=10";
+            console.log(queryURL);
         })
 
     </script>
