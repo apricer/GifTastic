@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GifTastic</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-    
+
+    <button data-search="Michael Scott">Michael Scott</button>
+    <button data-search="Dwight Schrute">Dwight Schrute</button>
+    <button data-search="Jim Halpert">Jim Halpert</button>
+    <button data-search="Pam Beesly">Pam Beesly</button>
+    <button data-search="Angela Martin">Angela Martin</button>
+    <button data-search="Ryan Howard">Ryan Howard</button>
+    <button data-search="Kevin Malone">Kevin Malone</button>
+    <button data-search="Stanley Hudson">Stanley Hudson</button>
+    <button data-search="Ryan Howard">Ryan Howard</button>
+    <button data-search="Meredith Palmer">Meredith Palmer</button>
+    <button data-search="Creed Bratton">Creed Bratton</button>
+
+    <script type="text/javascript">
+        $('button').on('click', function () {
+            console.log("Button Clicked!");
+        })
+
+    </script>
+
 </body>
+
 </html>
