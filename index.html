@@ -24,6 +24,10 @@
     <button data-search="Ryan Howard">Ryan Howard</button>
     <button data-search="Meredith Palmer">Meredith Palmer</button>
     <button data-search="Creed Bratton">Creed Bratton</button>
+    <button data-search="Phyllis Vance">Phyllis Vance</button>
+    <button data-search="Oscar Martinez">Oscar Martinez</button>
+
+    <div id="GIFArea"></div>
 
     <script type="text/javascript">
         $('button').on('click', function () {
@@ -31,8 +35,18 @@
             console.log(x);
 
             var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-                x + "api_keyBdbjZTGcexQ7b23etA5MfOCUxSevGkYE&limit=10";
+                x + "&api_key=HNvBzj4N4Kvj9EPH1QSEe3ZDpeXYxHrP&limit=10";
             console.log(queryURL);
+
+            $.ajax({ url: queryURL, method: 'GET' })
+                .done(function (response) {
+                    console.log(response.data[0].rating);
+                    for (var i = 0; i < response.data.length; i++) {
+                        $('#GIFArea').prepend("<p>Rating: " + response.data[i].rating + "</p>");
+                        $('#GIFArea').prepend("<img src = '" + response.data[i].images.downsized.url + "'>");
+                    }
+
+                })
         })
 
     </script>
